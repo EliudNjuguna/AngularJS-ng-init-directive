@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AngularJS ng init directive</title>
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="scripts/angular.js"></script>
+	<script src="scripts/Scripts.js"></script>
+	
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+	<ul>
+		<li ng-repeat="country in countries" ng-init="parentIndex =$index">
+			{{country.name}}
+			<ul>
+				<li ng-repeat="city in country.cities"> 
+				{{city.name}} - ParentIndex = {{ parentIndex }}, Index = {{$index}}
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+	</div>
+
+</body>
+</html>
